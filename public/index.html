@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <h2>To Do app</h2>
+    <ol class="tasks-list"></ol>
+
+    <form class="task-form" method="POST" >
+      <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" name="title" required>
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <input id="description" type="text" name="description">
+      </div>
+      <div>
+        <p class="error-msg" style="color: red"></p>
+        <button class="add-item" type="submit">Add</button>
+      </div>
+    </form>
+
+    <div>
+      <button class="remove-last">Remove Last</button>
+      <button class="clear-all">Clear All</button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
