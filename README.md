@@ -1,2 +1,2 @@
-# to-do-app-nodejs
-Simple to do app with nodejs + ts
+# Simple To Do App
+ - start dev server: `npm run dev`
