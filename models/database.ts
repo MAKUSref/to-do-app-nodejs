@@ -8,7 +8,7 @@ export type Task = {
 
 export type DB = Task[];
 
-export type ResponseInfo = {
+export type DatabaseResponse = {
   status: STATUS;
   items: DB;
 }

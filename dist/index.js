@@ -22,10 +22,8 @@ app.post('/api/add', (req, res) => {
         status: info.status,
         items: info.items
     };
-    if (info.status === statuses_1.default.OK) {
-        res.status(200).json(data);
-    }
-    res.status(400).json(data);
+    const httpStatus = info.status === statuses_1.default.OK ? 200 : 400;
+    res.status(httpStatus).json(data);
 });
 app.get('/api/remove', (req, res) => {
     res.status(200).json((0, databaseAdapter_1.remove)(DATABASE));

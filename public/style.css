@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(245, 245, 245);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.page-title {
+  margin: 0;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, .07), 0 6px 18px -1px rgba(0, 0, 0, .04);
+  background-color: white;
+}
+
+.tasks-list {
+  background-color: white;
+  /* list-style: none; */
+  padding: 5px 40px 5px 60px;
+  margin: 0;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px -1px rgba(0, 0, 0, .07), 0 6px 18px -1px rgba(0, 0, 0, .04);
+}
+
+.tasks-list > li {
+  padding: 15px 0px;
+}
+
+.tasks-list > li > p {
+  margin: 0;
+}
+
+.tasks-list > li > .item-title {
+  text-transform: uppercase;
+  word-wrap: break-word;
+}
+
+.tasks-list > li > .item-desc {
+  margin-top: 5px;
+  color: rgb(56, 56, 56);
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+.task-form {
+  margin-top: 20px;
+  padding: 0px 40px;
+}
+
+.task-form > div {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.task-form > div > input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(172, 172, 172);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: all 0.2s;
+}
+
+.task-form > div > input:focus {
+  outline: none;
+  background-color: white;
+  border-bottom: 2px solid rgb(77, 77, 77);
+}
+
+.add-item {
+
+}
+
+.list-menage-btns {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.list-menage-btns > button {
+  margin: 0 15px;
+}

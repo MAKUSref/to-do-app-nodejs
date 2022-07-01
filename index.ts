@@ -1,4 +1,4 @@
-import { DB, Task, ResponseInfo } from './models/database';
+import { DB, Task, DatabaseResponse } from './models/database';
 import bodyParser from 'body-parser';
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
@@ -19,16 +19,13 @@ const { PORT, HOST } = process.env;
 app.post('/api/add', (req: Request, res: Response) => {
   const task: Task = req.body;
   const info = add(DATABASE, task);
-  const data: ResponseInfo = {
+  const data: DatabaseResponse = {
     status: info.status,
     items: info.items
   }
 
-  if (info.status === STATUS.OK) {
-    res.status(200).json(data);
-  }
-
-  res.status(400).json(data);
+  const httpStatus = info.status === STATUS.OK ? 200 : 400;
+  res.status(httpStatus).json(data);
 });
 
 app.get('/api/remove', (req: Request, res: Response) => {

@@ -1,11 +1,11 @@
-import { DB, Task, ResponseInfo } from '../models/database';
+import { DB, Task, DatabaseResponse } from '../models/database';
 import STATUS from '../models/statuses';
 
 const MIN_TITLE_LENGTH = 10;
 const MAX_TITLE_LENGTH = 255;
 const MAX_DESC_LENGTH = 255;
 
-const remove = (db: DB): ResponseInfo => {
+const remove = (db: DB): DatabaseResponse => {
   const status = db.pop() ? STATUS.OK : STATUS.NO_ITEMS;
 
   return {
@@ -14,7 +14,7 @@ const remove = (db: DB): ResponseInfo => {
   }
 }
 
-const clear = (db: DB): ResponseInfo => {
+const clear = (db: DB): DatabaseResponse => {
   db.length = 0;
 
   return {
@@ -23,7 +23,7 @@ const clear = (db: DB): ResponseInfo => {
   };
 }
 
-const get = (db: DB): ResponseInfo => {
+const get = (db: DB): DatabaseResponse => {
   return {
     status: STATUS.OK,
     items: db
@@ -45,7 +45,7 @@ const getStatus = (title: string, description?: string ): STATUS => {
   return STATUS.OK;
 }
 
-const add = (db: DB, task: Task): ResponseInfo => {
+const add = (db: DB, task: Task): DatabaseResponse => {
   const { title, description } = task;
   const status = getStatus(title, description);
   

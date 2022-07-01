@@ -16,7 +16,9 @@ const URL_GET = `${URL}/api/get`;
 const createListItem = (title, desc) => {
   const listItemEl = document.createElement('li');
   const titleEl = document.createElement('p');
+  titleEl.classList.add('item-title');
   const descEl = document.createElement('p');
+  descEl.classList.add('item-desc');
 
   titleEl.textContent = title;
   descEl.textContent = desc;
