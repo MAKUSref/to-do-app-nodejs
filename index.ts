@@ -4,10 +4,11 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
 import { get, add, remove, clear } from './utils/databaseAdapter';
 import STATUS from './models/statuses';
+import uuid4 from 'uuid4';
 
 dotenv.config();
 
-const DATABASE: DB = [{ id: 'ss', title: 'title', description: 'desc' }];
+const DATABASE: DB = [];
 
 const app: Express = express();
 app.use(express.static('public'));
@@ -17,7 +18,11 @@ const { PORT, HOST } = process.env;
 
 // End points
 app.post('/api/add', (req: Request, res: Response) => {
-  const task: Task = req.body;
+  const task: Task = {
+    ...req.body,
+    id: uuid4()
+  };
+  
   const info = add(DATABASE, task);
   const data: DatabaseResponse = {
     status: info.status,

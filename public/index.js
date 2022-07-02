@@ -95,11 +95,11 @@ taskFormEl.addEventListener('submit', (e) => {
   // Dodane tylko dlatego bo baza danych przechowywana jest w zmiennej
   e.preventDefault();
 
-  const id = 'id';
+  // const id = 'id';
   const title = titleInputEl.value;
   const description = descriptionInputEl.value;
 
-  const item = { id, title, description };
+  const item = { title, description };
 
   titleInputEl.value = '';
   descriptionInputEl.value = '';
