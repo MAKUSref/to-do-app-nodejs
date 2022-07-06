@@ -1,0 +1,8 @@
+enum HTTP_STATUSES {
+  STATUS_200 = 200,
+  STATUS_201 = 201,
+  STATUS_202 = 202,
+  STATUS_400 = 400,
+}
+
+export default HTTP_STATUSES;

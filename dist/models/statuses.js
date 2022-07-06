@@ -8,5 +8,6 @@ var STATUSES;
     STATUSES["TITLE_TOO_LONG"] = "Title is too long";
     STATUSES["DESCRIPTION_TOO_LONG"] = "Description is too long";
     STATUSES["NO_ITEMS"] = "No items to remove";
+    STATUSES["CLEAR_CORRUPTED"] = "Clear items corrupted";
 })(STATUSES || (STATUSES = {}));
 exports.default = STATUSES;
